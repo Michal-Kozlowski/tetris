@@ -5,7 +5,7 @@ var positionX = 5;
 var	positionY = 2;
 var blockType;
 var activeBlock;
-var interval = 150;
+var interval = 333;
 var points = 0;
 
 var table = document.querySelector("table");
@@ -45,6 +45,8 @@ document.addEventListener("keydown", function(e){
 	}	
 	else if(e.keyCode === 40 || e.keyCode === 83) {
 		e.preventDefault();
+		down();
+		down();
 		down();
 	}
 	if(e.keyCode === 32 && !gameIsOn) {
@@ -319,7 +321,7 @@ function init(){
 	points = 0;	
 	span.textContent = points;
 	spawnBlock();
-	game = setInterval(down, 150);
+	game = setInterval(down, interval);
 }
 
 function gameOver(){	
